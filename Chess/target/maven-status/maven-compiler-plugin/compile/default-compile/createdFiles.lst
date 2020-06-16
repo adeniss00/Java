@@ -1,0 +1,11 @@
+com/chess/engine/pieces/Piece.class
+com/chess/engine/board/MajorMove.class
+com/chess/engine/board/OccupiedTile.class
+com/chess/engine/board/AttackMove.class
+com/chess/engine/board/BoardUtils.class
+com/chess/engine/board/EmptyTile.class
+com/chess/engine/Alliance.class
+com/chess/engine/board/Move.class
+com/chess/engine/board/Tile.class
+com/chess/engine/pieces/Knight.class
+com/chess/engine/board/Board.class

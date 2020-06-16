@@ -19,7 +19,17 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2e6068ae-4f31-4d8c-b2e3-14b90359de96" name="Default Changelist" comment="" />
+    <list default="true" id="2e6068ae-4f31-4d8c-b2e3-14b90359de96" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/Chess.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/chess/engine/board/Tile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/chess/engine/board/Tile.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -43,6 +53,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
@@ -54,7 +65,7 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
-    <property name="settings.editor.selected.configurable" value="inlay.hints.JAVA" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors" />
   </component>
   <component name="RecentsManager">
     <key name="MoveMembersDialog.RECENTS_KEY">
@@ -86,6 +97,8 @@
       <workItem from="1592325102037" duration="807000" />
       <workItem from="1592325926067" duration="1103000" />
       <workItem from="1592327042645" duration="1041000" />
+      <workItem from="1592328153021" duration="147000" />
+      <workItem from="1592328315283" duration="405000" />
     </task>
     <task id="LOCAL-00001" summary="Ajout premiere partie Chess">
       <created>1592243506024</created>
@@ -133,10 +146,10 @@
     <option name="LAST_COMMIT_MESSAGE" value="ajout java" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="0" y="117" key="#Project_Structure" timestamp="1592298816919">
+    <state x="0" y="117" key="#Project_Structure" timestamp="1592328388941">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="0" y="117" key="#Project_Structure/0.0.1920.1080@0.0.1920.1080" timestamp="1592298816919" />
+    <state x="0" y="117" key="#Project_Structure/0.0.1920.1080@0.0.1920.1080" timestamp="1592328388941" />
     <state x="285" y="259" key="#com.intellij.ide.util.MemberChooser" timestamp="1592326018625">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
@@ -157,10 +170,14 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="191" y="350" key="#com.intellij.refactoring.move.moveMembers.MoveMembersDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1592302910055" />
-    <state x="461" y="184" key="SettingsEditor" timestamp="1592242925536">
+    <state x="490" y="194" key="Maven.ArtifactSearchDialog" timestamp="1592328646076">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="461" y="184" key="SettingsEditor/0.0.1920.1080@0.0.1920.1080" timestamp="1592242925536" />
+    <state x="490" y="194" key="Maven.ArtifactSearchDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1592328646076" />
+    <state x="461" y="184" key="SettingsEditor" timestamp="1592328260714">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="461" y="184" key="SettingsEditor/0.0.1920.1080@0.0.1920.1080" timestamp="1592328260714" />
     <state x="552" y="272" key="Vcs.Push.Dialog.v2" timestamp="1592243636712">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>

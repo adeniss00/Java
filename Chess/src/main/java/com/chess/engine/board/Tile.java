@@ -1,6 +1,6 @@
 package com.chess.engine.board;
 
-import com.chess.engine.pieces.BoardUtils;
+
 import com.chess.engine.pieces.Piece;
 
 
