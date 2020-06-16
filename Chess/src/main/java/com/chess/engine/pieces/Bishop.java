@@ -21,6 +21,9 @@ public class Bishop extends Piece {
         for (final int candidateCoordinateOffset:CANDIDATE_MOVE_VECTOR_COORDINATES) {
             int candidateDestinationCoordinate = this.piecePosition;
             while (BoardUtils.isValidTileCoordinate(candidateDestinationCoordinate)) {
+                if (isFirstColumnExclusion(candidateDestinationCoordinate,candidateCoordinateOffset)||isEighthColumnExclusion(candidateDestinationCoordinate,candidateCoordinateOffset)){
+                    break;
+                }
                 candidateDestinationCoordinate += candidateCoordinateOffset;
                 final Tile candidateDestinationTile = board.getTile(candidateDestinationCoordinate);
                 if (!candidateDestinationTile.isTileOccupied()) {
@@ -37,4 +40,12 @@ public class Bishop extends Piece {
         }
         return legalMoves;
     }
+
+    private static boolean isFirstColumnExclusion(final int currentPosition ,final int candidateOffset){
+        return BoardUtils.FIRST_COLUMN[currentPosition]&&((candidateOffset==-9)||(candidateOffset==-7));
+    }
+    private static boolean isEighthColumnExclusion(final int currentPosition ,final int candidateOffset){
+        return BoardUtils.FIRST_COLUMN[currentPosition]&&((candidateOffset==-7)||(candidateOffset==-9));
+    }
+
 }
