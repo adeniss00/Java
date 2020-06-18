@@ -16,7 +16,7 @@ public class Bishop extends Piece {
     }
 
     @Override
-    public Collection<Move> calculateLegalMoves(Board board) {
+    public Collection<Move> calculateLegalMoves(final Board board) {
         final List<Move> legalMoves=new ArrayList<>();
         for (final int candidateCoordinateOffset:CANDIDATE_MOVE_VECTOR_COORDINATES) {
             int candidateDestinationCoordinate = this.piecePosition;
@@ -42,10 +42,10 @@ public class Bishop extends Piece {
     }
 
     private static boolean isFirstColumnExclusion(final int currentPosition ,final int candidateOffset){
-        return BoardUtils.FIRST_COLUMN[currentPosition]&&((candidateOffset==-9)||(candidateOffset==-7));
+        return BoardUtils.FIRST_COLUMN[currentPosition]&&((candidateOffset==-9)||(candidateOffset==7));
     }
     private static boolean isEighthColumnExclusion(final int currentPosition ,final int candidateOffset){
-        return BoardUtils.FIRST_COLUMN[currentPosition]&&((candidateOffset==-7)||(candidateOffset==-9));
+        return BoardUtils.FIRST_COLUMN[currentPosition]&&((candidateOffset==-7)||(candidateOffset==9));
     }
 
 }
