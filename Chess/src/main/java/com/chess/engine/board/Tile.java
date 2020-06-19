@@ -1,40 +1,38 @@
 package com.chess.engine.board;
 
-
-import com.chess.engine.pieces.Piece;
-
-
+import java.util.HashMap;
 import java.util.Map;
 
-import static java.util.stream.Collectors.toMap;
-import static java.util.stream.IntStream.range;
+import com.chess.engine.pieces.Piece;
+import com.google.common.collect.ImmutableMap;
 
+public abstract class Tile {
+	//can only be used by it's subclasses, can only be set once at construction time
+	protected final int tileCoordinate;
 
-public abstract class Tile{
-    protected final int tileCoordinate;
-    private static final Map<Integer,EmptyTile> EMPTY_TILES=createAllPossibleEmptyTiles();
+	private static final Map<Integer, EmptyTile> EMPTY_TILES_CACHE = createAllPossibleEmptyTiles();
 
-    private static Map<Integer, EmptyTile> createAllPossibleEmptyTiles() {
-        Map<Integer, EmptyTile> emptyTileMap = range(0, BoardUtils.NUM_TILES).boxed().collect(toMap(i -> i, EmptyTile::new));
-        return emptyTileMap;
-    }
-    public static Tile createTile(final int tileCoordinate,final Piece piece){
-        if(piece!=null){
-            return new OccupiedTile(tileCoordinate,piece);
-        }
-        return EMPTY_TILES.get(tileCoordinate);
-    }
+	private static Map<Integer, EmptyTile> createAllPossibleEmptyTiles() {
 
-    @Override
-    public String toString() {
-        return "-";
-    }
+		final Map<Integer, EmptyTile> emptyTileMap = new HashMap<>();
 
-    Tile(int tileCoordinate){
-        this.tileCoordinate=tileCoordinate;
-    }
-    public abstract boolean isTileOccupied();
-    public abstract Piece getPiece();
+		for (int i = 0; i < 64; i++) {
+			emptyTileMap.put(i, new EmptyTile(i));
+		}
+
+		return ImmutableMap.copyOf(emptyTileMap);
+	}
+
+	public static Tile createTile(final int tileCoordinate, final Piece piece) {
+		return piece != null ? new OccupiedTile(tileCoordinate, piece) : EMPTY_TILES_CACHE.get(tileCoordinate);
+	}
+
+	protected Tile(final int tileCoordinate) {
+		this.tileCoordinate = tileCoordinate;
+	}
+
+	public abstract boolean isTileOccupied();
+
+	public abstract Piece getPiece();
 
 }
-

@@ -2,17 +2,28 @@ package com.chess.engine.board;
 
 import com.chess.engine.pieces.Piece;
 
-public final class EmptyTile extends Tile{
-    EmptyTile(final int coordinate){
+//defines empty tiles
+public final class EmptyTile extends Tile {
+    //declares that there is no piece on an empty tile
+    EmptyTile(final int coordinate) {
         super(coordinate);
     }
-    @Override
-    public boolean isTileOccupied(){
 
+    @Override
+    public String toString() {
+        return "-";
+    }
+
+    //declares that tile has no piece
+    @Override
+    public boolean isTileOccupied() {
         return false;
     }
-    public Piece getPiece(){
 
+    //declares that tile has no piece
+    @Override
+    public Piece getPiece() {
         return null;
     }
+
 }

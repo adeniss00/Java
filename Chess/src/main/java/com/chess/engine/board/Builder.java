@@ -7,23 +7,17 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Builder {
+
     Map<Integer, Piece> boardConfig;
     Alliance nextMoveMaker;
-    public Builder(){
-        this.boardConfig=new HashMap<>();
-    }
-    public Map<Integer, Piece> getBoardConfig() {
-        return boardConfig;
+
+    public Builder() {
+        this.boardConfig = new HashMap<>();
     }
 
     public Builder setPiece(final Piece piece) {
-        this.boardConfig.put(piece.getPiecePosition(),piece);
+        this.boardConfig.put(piece.getPiecePosition(),  piece);
         return this;
-    }
-
-    public Builder(Map<Integer, Piece> boardConfig, Alliance nextMoveMaker) {
-        this.boardConfig = boardConfig;
-        this.nextMoveMaker = nextMoveMaker;
     }
 
     public Builder setMoveMaker(final Alliance nextMoveMaker) {
@@ -31,7 +25,9 @@ public class Builder {
         return this;
     }
 
-    public Board build(){
+    public Board build() {
         return new Board(this);
+
     }
+
 }
