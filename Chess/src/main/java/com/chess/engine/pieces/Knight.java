@@ -11,8 +11,8 @@ import java.util.List;
 public class Knight extends Piece {
 
     private final static int[] CANDIDATE_MOVE_COORDINATES = {-17,-15,-10,-6,6,10,15,17};
-    Knight(int piecePosition, final Alliance pieceAlliance) {
-        super(piecePosition, pieceAlliance);
+    public Knight( Alliance pieceAlliance,int piecePosition) {
+        super(pieceAlliance, piecePosition);
     }
 
 
@@ -47,6 +47,11 @@ public class Knight extends Piece {
            }
         }
         return legalMoves;
+    }
+
+    @Override
+    public String toString() {
+        return PieceType.KNIGHT.toString();
     }
     private static boolean isFirstColumnExclusion(final int currentPosition ,final int candidateOffset){
         return BoardUtils.FIRST_COLUMN[currentPosition]&&((candidateOffset==-17)||(candidateOffset==-10)||(candidateOffset==6)||(candidateOffset==15));

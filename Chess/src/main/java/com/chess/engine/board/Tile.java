@@ -24,6 +24,12 @@ public abstract class Tile{
         }
         return EMPTY_TILES.get(tileCoordinate);
     }
+
+    @Override
+    public String toString() {
+        return "-";
+    }
+
     Tile(int tileCoordinate){
         this.tileCoordinate=tileCoordinate;
     }
