@@ -2,9 +2,12 @@ package com.chess.engine.board;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.stream.IntStream;
 
 import com.chess.engine.pieces.Piece;
 import com.google.common.collect.ImmutableMap;
+
+import static java.util.stream.Collectors.toMap;
 
 public abstract class Tile {
 	//can only be used by it's subclasses, can only be set once at construction time
@@ -14,13 +17,9 @@ public abstract class Tile {
 
 	private static Map<Integer, EmptyTile> createAllPossibleEmptyTiles() {
 
-		final Map<Integer, EmptyTile> emptyTileMap = new HashMap<>();
 
-		for (int i = 0; i < 64; i++) {
-			emptyTileMap.put(i, new EmptyTile(i));
-		}
-
-		return ImmutableMap.copyOf(emptyTileMap);
+		Map<Integer, EmptyTile> emptyTileMap = IntStream.range(0, 64).boxed().collect(toMap(i -> i, EmptyTile::new));
+		return emptyTileMap;
 	}
 
 	public static Tile createTile(final int tileCoordinate, final Piece piece) {
