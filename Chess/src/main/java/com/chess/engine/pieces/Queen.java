@@ -15,7 +15,7 @@ public class Queen extends Piece {
 	
 	public Queen(final Alliance pieceAlliance, 
 			final int piecePosition) {
-		super(piecePosition, pieceAlliance);
+		super(PieceType.QUEEN,piecePosition, pieceAlliance);
 	}
 
 	@Override
@@ -52,7 +52,7 @@ public class Queen extends Piece {
 	
 	@Override
 	public String toString() {
-		return Piece.PieceType.QUEEN.toString();
+		return PieceType.QUEEN.toString();
 	}
 	
 	private static boolean isFirstColumnExclusion(final int currentPosition, final int candidateOffset) {

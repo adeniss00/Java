@@ -9,18 +9,22 @@ import com.chess.engine.board.Board;
 
 
 public abstract class Piece {
-	
+
+	protected final PieceType pieceType;
 	protected final int piecePosition;
 	protected final Alliance pieceAlliance;
 	protected final boolean isFirstMove;
 	
-	Piece(final int piecePosition, final Alliance pieceAlliance) {
+	Piece(final PieceType pieceType, final int piecePosition, final Alliance pieceAlliance) {
 		this.pieceAlliance = pieceAlliance;
 		this.piecePosition = piecePosition;
+		this.pieceType=pieceType;
 		//TODO more work here!!
 		this.isFirstMove = false;
 	}
-	
+	public PieceType getPieceType(){
+		return this.pieceType;
+	}
 	public int getPiecePosition() {
 		return this.piecePosition;
 	}
@@ -34,26 +38,5 @@ public abstract class Piece {
 	}
 	//takes a board and finds the legal moves for a piece on that board
 	public abstract Collection<Move> calculateLegalMoves(final Board board);
-	
-	public enum PieceType {
-		
-		PAWN("P"),
-		KNIGHT("N"),
-		BISHOP("B"),
-		ROOK("R"),
-		QUEEN("Q"),
-		KING("K");
-		
-		private String pieceName;
-		
-		PieceType(final String pieceName) {
-			this.pieceName = pieceName;
-		}
-	
-	@Override
-	public String toString() {
-		return this.pieceName;
-	}
-	}
 
 }

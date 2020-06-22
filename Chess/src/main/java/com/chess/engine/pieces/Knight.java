@@ -15,7 +15,7 @@ public class Knight extends Piece {
 	
 	public Knight(final Alliance pieceAlliance, 
 			final int piecePosition) {
-		super(piecePosition, pieceAlliance);
+		super(PieceType.KNIGHT,piecePosition, pieceAlliance);
 	}
 	
 	@Override
@@ -50,7 +50,7 @@ public class Knight extends Piece {
 	
 	@Override
 	public String toString() {
-		return Piece.PieceType.KNIGHT.toString();
+		return PieceType.KNIGHT.toString();
 	}
 	//all of below are the exceptions; when the knight is in the 1, 2, 7, or 8 column and can't perform all moves
 	private static boolean isFirstColumnExclusion(final int currentPosition, final int candidateOffset) {

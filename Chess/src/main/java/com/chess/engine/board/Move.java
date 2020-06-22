@@ -8,7 +8,8 @@ public abstract class Move {
 	final Board board;
 	final Piece movedPiece;
 	final int destinationCoordinate;
-	
+
+
 	protected Move(final Board board,
 				   final Piece movedPiece,
 				   final int destinationCoordinate) {
@@ -17,5 +18,9 @@ public abstract class Move {
 		this.destinationCoordinate = destinationCoordinate;
 	}
 
+	public int getDestinationCoordinate() {
+		return destinationCoordinate;
+	}
 
+    public abstract Board execute();
 }
