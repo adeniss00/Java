@@ -2,7 +2,7 @@ package com.chess.engine.board;
 
 import com.chess.engine.pieces.Piece;
 
-public final class AttackMove extends Move {
+public class AttackMove extends Move {
 
     final Piece attackedPiece;
 

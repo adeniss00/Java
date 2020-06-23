@@ -10,8 +10,5 @@ public final class MajorMove extends Move {
         super(board, movedPiece, destinationCoordinate);
     }
 
-    @Override
-    public Board execute() {
-        return null;
-    }
+
 }
