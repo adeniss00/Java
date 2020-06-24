@@ -10,6 +10,10 @@ import com.google.common.collect.ImmutableMap;
 import static java.util.stream.Collectors.toMap;
 
 public abstract class Tile {
+	public int getTileCoordinate() {
+		return tileCoordinate;
+	}
+
 	//can only be used by it's subclasses, can only be set once at construction time
 	protected final int tileCoordinate;
 

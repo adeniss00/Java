@@ -1,6 +1,7 @@
 package com.chess.engine.board;
 
 import com.chess.engine.Alliance;
+import com.chess.engine.pieces.Pawn;
 import com.chess.engine.pieces.Piece;
 
 import java.util.HashMap;
@@ -10,6 +11,7 @@ public class Builder {
 
     Map<Integer, Piece> boardConfig;
     Alliance nextMoveMaker;
+    Pawn enPassantPawn;
 
     public Builder() {
         this.boardConfig = new HashMap<>();
@@ -30,4 +32,7 @@ public class Builder {
 
     }
 
+    public void setEnPassantPawn(Pawn enPassantPawn) {
+        this.enPassantPawn=enPassantPawn;
+    }
 }
