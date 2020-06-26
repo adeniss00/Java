@@ -26,10 +26,11 @@ public class TilePanel extends JPanel {
 
     TilePanel(final BoardPanel boardPanel , final int tileId){
         super(new GridBagLayout());
-        this.tileId=tileId;
+        this.tileId = tileId;
         setPreferredSize(TILE_PANEL_DIMENSION);
         assignTileColor();
         assignTilePieceIcon(chessBoard);
+
         addMouseListener(new MouseListener() {
             @Override
             public void mouseClicked(final MouseEvent e) {
@@ -65,6 +66,7 @@ public class TilePanel extends JPanel {
                             }
                         });
                     }
+                    validate();
 
             }
 
@@ -123,23 +125,16 @@ public class TilePanel extends JPanel {
         }
     }
    private Collection<Move> pieceLegalMoves(final Board board){
-        if (humanMovedPiece!=null && humanMovedPiece.getPieceAlliance()==board.CurrentPlayer().getAlliance()){
-            return humanMovedPiece.calculateLegalMoves(board);
-        }
-        return Collections.emptyList();
+       if(humanMovedPiece != null && humanMovedPiece.getPieceAlliance() == board.currentPlayer().getAlliance()) {
+           return humanMovedPiece.calculateLegalMoves(board);
+       }
+       return Collections.emptyList();
    }
     private void assignTileColor() {
-        if (BoardUtils.EIGHTH_RANK[this.tileId]||
-                BoardUtils.SIXTH_RANK[this.tileId]||
-                BoardUtils.FOURTH_RANK[this.tileId]||
-                BoardUtils.SECOND_RANK[this.tileId]){
-            setBackground(this.tileId%2==0 ? lightTileColor:darkTileColor);
-        }
-        else if (BoardUtils.SEVENTH_RANK[this.tileId]||
-                BoardUtils.FIFTH_RANK[this.tileId]||
-                BoardUtils.THIRD_RANK[this.tileId]||
-                BoardUtils.FIRST_RANK[this.tileId]){
-            setBackground(this.tileId%2!=0 ?lightTileColor: darkTileColor);
+        if (BoardUtils.EIGHTH_RANK[this.tileId] || BoardUtils.SIXTH_RANK[this.tileId] || BoardUtils.FOURTH_RANK[this.tileId] || BoardUtils.SECOND_RANK[this.tileId]) {
+            setBackground(this.tileId % 2 == 0 ? lightTileColor : darkTileColor);
+        } else if(BoardUtils.SEVENTH_RANK[this.tileId] || BoardUtils.FIFTH_RANK[this.tileId] || BoardUtils.THIRD_RANK[this.tileId]  || BoardUtils.FIRST_RANK[this.tileId]) {
+            setBackground(this.tileId % 2 != 0 ? lightTileColor : darkTileColor);
         }
     }
 }
