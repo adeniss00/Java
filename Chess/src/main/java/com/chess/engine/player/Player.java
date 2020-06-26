@@ -86,7 +86,7 @@ public abstract class Player {
         }
         final Board transitionBoard=move.execute();
 
-        final Collection<Move> kingAttacks=Player.calculateAttacksOnTile(transitionBoard.currentPlayer().getOpponent().getPlayerKing().getPiecePosition(),transitionBoard.currentPlayer().getLegalMoves());
+        final Collection<Move> kingAttacks=Player.calculateAttacksOnTile(transitionBoard.CurrentPlayer().getOpponent().getPlayerKing().getPiecePosition(),transitionBoard.CurrentPlayer().getLegalMoves());
         if(!kingAttacks.isEmpty()){
             return new MoveTransition(this.board,move,MoveStatus.LEAVES_PLAYER_IN_CHECK);
         }
