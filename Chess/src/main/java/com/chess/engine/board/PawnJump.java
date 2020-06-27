@@ -11,18 +11,18 @@ public class PawnJump extends Move {
     @Override
     public Board execute() {
         final Builder builder=new Builder();
-        for (final Piece piece: this.board.currentPlayer().getActivePieces()) {
+        for (final Piece piece: this.board.CurrentPlayer().getActivePieces()) {
             if(!(this.movedPiece.equals(piece))){
                 builder.setPiece(piece);
             }
         }
-        for (final Piece piece:this.board.currentPlayer().getActivePieces()) {
+        for (final Piece piece:this.board.CurrentPlayer().getActivePieces()) {
             builder.setPiece(piece);
         }
         final Pawn movedPawn=(Pawn) this.movedPiece.movePiece(this);
         builder.setPiece(movedPawn);
         builder.setEnPassantPawn(movedPawn);
-        builder.setMoveMaker(this.board.currentPlayer().getOpponent().getAlliance());
+        builder.setMoveMaker(this.board.CurrentPlayer().getOpponent().getAlliance());
         return builder.build();
     }
 }

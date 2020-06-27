@@ -9,7 +9,7 @@ import java.util.Map;
 
 public class Builder {
 
-    Map<Integer, Piece> boardConfig;
+    final Map<Integer, Piece> boardConfig;
     Alliance nextMoveMaker;
     Pawn enPassantPawn;
 

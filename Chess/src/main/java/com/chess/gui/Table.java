@@ -19,9 +19,9 @@ public class Table {
     protected static BoardDirection boardDirection;
     protected static boolean highlightLegalMoves;
 
-    protected static Color lightTileColor = Color.decode("#FFFACD");
-    protected static Color darkTileColor = Color.decode("#593E1A");
-    protected static String defaultPieceImagesPath="art/pieces/plain/";
+    protected final static Color lightTileColor = Color.decode("#FFFACD");
+    protected final static Color darkTileColor = Color.decode("#593E1A");
+    protected final static String defaultPieceImagesPath="art/pieces/plain/";
 
     protected final static  Dimension OUTER_FRAME_DIMENSION =new Dimension(600,600) ;
     protected final static  Dimension BOARD_PANEL_DIMENSION = new Dimension(400,350);
@@ -32,10 +32,10 @@ public class Table {
         final JMenuBar tableMenuBar = createTableMenuBar();
         this.gameFrame.setJMenuBar(tableMenuBar);
         this.gameFrame.setVisible(true);
-        this.chessBoard= Board.createStandardBoard();
+        chessBoard= Board.createStandardBoard();
         this.boardPanel=new BoardPanel();
-        this.boardDirection=BoardDirection.NORMAL;
-        this.highlightLegalMoves=false;
+        boardDirection=BoardDirection.NORMAL;
+        highlightLegalMoves=false;
         this.gameFrame.add(this.boardPanel,BorderLayout.CENTER);
         this.gameFrame.setSize(OUTER_FRAME_DIMENSION);
     }
@@ -50,20 +50,10 @@ public class Table {
     private JMenu createFileMenu() {
         final JMenu fileMenu=new JMenu("File");
         final JMenuItem openPGN=new JMenuItem("Load PGN File");
-        openPGN.addActionListener(new ActionListener(){
-            @Override
-            public void actionPerformed(ActionEvent e){
-                System.out.println("Open up that pgn file !");
-            }
-        });
+        openPGN.addActionListener(e -> System.out.println("Open up that pgn file !"));
         fileMenu.add(openPGN);
         final JMenuItem exitMenuItem=new JMenuItem("Exit");
-        exitMenuItem.addActionListener(new ActionListener(){
-            @Override
-            public void actionPerformed(ActionEvent e){
-                System.exit(0);
-            }
-        });
+        exitMenuItem.addActionListener(e -> System.exit(0));
         fileMenu.add(exitMenuItem);
         return fileMenu;
     }
@@ -90,7 +80,5 @@ public class Table {
         return prefencesMenu;
     }
 
-    public boolean isHighlightLegalMoves() {
-        return this.highlightLegalMoves;
-    }
+
 }

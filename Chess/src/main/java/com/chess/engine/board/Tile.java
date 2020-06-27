@@ -1,11 +1,9 @@
 package com.chess.engine.board;
 
-import java.util.HashMap;
 import java.util.Map;
 import java.util.stream.IntStream;
 
 import com.chess.engine.pieces.Piece;
-import com.google.common.collect.ImmutableMap;
 
 import static java.util.stream.Collectors.toMap;
 

@@ -59,14 +59,8 @@ public class TilePanel extends JPanel {
                             destinationTile=null;
                             humanMovedPiece=null;
                         }
-                        SwingUtilities.invokeLater(new Runnable() {
-                            @Override
-                            public void run() {
-                                boardPanel.drawBoard(chessBoard);
-                            }
-                        });
+                        SwingUtilities.invokeLater(() -> boardPanel.drawBoard(chessBoard));
                     }
-                    validate();
 
             }
 
@@ -115,8 +109,7 @@ public class TilePanel extends JPanel {
             for (final Move move:pieceLegalMoves(board)) {
                 if(move.getDestinationCoordinate()==this.tileId){
                     try {
-                        add(new JLabel(new ImageIcon(ImageIO.read(new File("art/misc/green_dot.png")))));
-                    }
+                        add(new JLabel(new ImageIcon(ImageIO.read(new File("art/misc/green_dot.png")))));}
                     catch (Exception e){
                         e.printStackTrace();
                     }
@@ -125,7 +118,7 @@ public class TilePanel extends JPanel {
         }
     }
    private Collection<Move> pieceLegalMoves(final Board board){
-       if(humanMovedPiece != null && humanMovedPiece.getPieceAlliance() == board.currentPlayer().getAlliance()) {
+       if(humanMovedPiece != null && humanMovedPiece.getPieceAlliance() == board.CurrentPlayer().getAlliance()) {
            return humanMovedPiece.calculateLegalMoves(board);
        }
        return Collections.emptyList();

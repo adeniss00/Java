@@ -21,7 +21,7 @@ public class Board {
 	private final Collection<Piece> blackPieces;
 	private final WhitePlayer whitePlayer;
 	private final BlackPlayer blackPlayer;
-	private final Player currentPlayer;
+	private  Player currentPlayer;
 
 
 
@@ -51,7 +51,7 @@ public class Board {
 
 	public Player CurrentPlayer() {
 		return this.currentPlayer;
-	}
+    }
 
 	public Player whitePlayer(){
 		return this.whitePlayer;
@@ -143,10 +143,6 @@ public class Board {
 		return builder.build();						
 	}
 
-
-    public Player currentPlayer() {
-		return null;
-    }
 
     public Iterable<Move> getAllLegalMoves() {
 		return Iterables.unmodifiableIterable(Iterables.concat(this.whitePlayer.getLegalMoves(),this.blackPlayer.getLegalMoves()));

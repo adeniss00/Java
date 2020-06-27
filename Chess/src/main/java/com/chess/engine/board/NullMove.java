@@ -1,6 +1,5 @@
 package com.chess.engine.board;
 
-import com.chess.engine.pieces.Piece;
 
 public class NullMove extends Move {
     protected NullMove() {
