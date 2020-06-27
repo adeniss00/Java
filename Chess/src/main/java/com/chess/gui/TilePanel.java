@@ -59,8 +59,8 @@ public class TilePanel extends JPanel {
                             destinationTile=null;
                             humanMovedPiece=null;
                         }
-                        SwingUtilities.invokeLater(() -> boardPanel.drawBoard(chessBoard));
-                    }
+                    SwingUtilities.invokeLater(() -> boardPanel.drawBoard(chessBoard));
+                }
 
             }
 
@@ -109,7 +109,8 @@ public class TilePanel extends JPanel {
             for (final Move move:pieceLegalMoves(board)) {
                 if(move.getDestinationCoordinate()==this.tileId){
                     try {
-                        add(new JLabel(new ImageIcon(ImageIO.read(new File("art/misc/green_dot.png")))));}
+                        add(new JLabel(new ImageIcon(ImageIO.read(new File("art/misc/green_dot.png")))));
+                    }
                     catch (Exception e){
                         e.printStackTrace();
                     }

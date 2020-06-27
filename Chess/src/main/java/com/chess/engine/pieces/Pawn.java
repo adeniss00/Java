@@ -17,8 +17,12 @@ public class Pawn extends Piece {
 	private final static int[] CANDIDATE_MOVE_COORDINATE = {7, 8, 9, 16};
 	
 	public Pawn(final Alliance pieceAlliance, 
-			final int piecePosition) {
-		super(PieceType.PAWN,piecePosition, pieceAlliance);
+			final int piecePosition,boolean isFirstMove) {
+		super(PieceType.PAWN,piecePosition, pieceAlliance,isFirstMove);
+	}
+	public Pawn(final Alliance pieceAlliance,
+				final int piecePosition) {
+		super(PieceType.PAWN,piecePosition, pieceAlliance,true);
 	}
 	@Override
 	public Pawn movePiece(final Move move) {
@@ -37,12 +41,12 @@ public class Pawn extends Piece {
 				continue;
 			}
 			
-			if(currentCandidateOffset == 8 && board.getTile(candidateDestinationCoordinate).isTileOccupied()) {
+			if(currentCandidateOffset == 8 && !board.getTile(candidateDestinationCoordinate).isTileOccupied()) {
 				//TODO more work to do here (deal with promotions)!!!!
 				legalMoves.add(new MajorMove(board, this, candidateDestinationCoordinate));
 			} else if(currentCandidateOffset == 16 && this.isFirstMove() && 
-					(BoardUtils.SEVENTH_RANK[this.piecePosition] && this.getPieceAlliance().isBlack()) || //if on the second row and black
-					(BoardUtils.SECOND_RANK[this.piecePosition] && this.getPieceAlliance().isWhite())) { //if on the seventh row and whit
+					((BoardUtils.SEVENTH_RANK[this.piecePosition] && this.getPieceAlliance().isBlack()) || //if on the second row and black
+					(BoardUtils.SECOND_RANK[this.piecePosition] && this.getPieceAlliance().isWhite()))) { //if on the seventh row and whit
 				final int behindCandidateDestinationCoordinate = this.piecePosition + (this.pieceAlliance.getDirection() * 8);
 				if(!board.getTile(behindCandidateDestinationCoordinate).isTileOccupied() &&
 				   !board.getTile(candidateDestinationCoordinate).isTileOccupied()) {

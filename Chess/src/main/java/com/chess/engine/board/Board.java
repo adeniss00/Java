@@ -16,12 +16,12 @@ import com.google.common.collect.Iterables;
 
 public class Board {
 	
-	private final List<Tile> gameBoard;
-	private final Collection<Piece> whitePieces;
-	private final Collection<Piece> blackPieces;
-	private final WhitePlayer whitePlayer;
-	private final BlackPlayer blackPlayer;
-	private  Player currentPlayer;
+	private List<Tile> gameBoard;
+	private Collection<Piece> whitePieces;
+	private Collection<Piece> blackPieces;
+	private WhitePlayer whitePlayer;
+	private BlackPlayer blackPlayer;
+	private Player currentPlayer;
 
 
 
