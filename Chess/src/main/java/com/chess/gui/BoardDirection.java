@@ -4,27 +4,39 @@ import com.google.common.collect.Lists;
 
 import java.util.List;
 
+/**
+ * Enum to deal with flipping the board.
+ */
+
 public enum BoardDirection {
-        NORMAL{
-            @Override
-            public List<TilePanel> traverse(final List<TilePanel> boardTiles){
-                return boardTiles;
-            }
-            @Override
-            public BoardDirection opposite(){
-                return FLIPPED;
-            }
-        },
-    FLIPPED{
+
+    NORMAL {
         @Override
-        public List<TilePanel> traverse(final List<TilePanel> boardTiles){
+        List<TilePanel> traverse(final List<TilePanel> boardTiles) {
+            return boardTiles;
+        }
+
+        @Override
+        BoardDirection opposite() {
+            return FLIPPED;
+        }
+
+    },
+    FLIPPED {
+        @Override
+        List<TilePanel> traverse(final List<TilePanel> boardTiles) {
             return Lists.reverse(boardTiles);
         }
+
         @Override
-        public BoardDirection opposite(){
+        BoardDirection opposite() {
             return NORMAL;
         }
     };
-    public abstract List<TilePanel> traverse(final List<TilePanel> boardTiles);
-    public abstract BoardDirection opposite();
+
+    abstract List<TilePanel> traverse(final List<TilePanel> boardTiles);
+
+    abstract BoardDirection opposite();
+
+
 }

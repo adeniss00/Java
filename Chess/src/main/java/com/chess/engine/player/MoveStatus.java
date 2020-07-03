@@ -1,7 +1,8 @@
 package com.chess.engine.player;
 
+
 public enum MoveStatus {
-    DONE{
+    DONE {
         @Override
         public boolean isDone() {
             return true;
@@ -11,9 +12,10 @@ public enum MoveStatus {
         @Override
         public boolean isDone() {
             return false;
+
         }
     },
-    LEAVES_PLAYER_IN_CHECK{
+    LEAVES_PLAYER_IN_CHECK {
         @Override
         public boolean isDone() {
             return false;

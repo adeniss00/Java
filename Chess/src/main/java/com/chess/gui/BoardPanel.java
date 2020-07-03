@@ -8,30 +8,47 @@ import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
 
-import static com.chess.gui.Table.BOARD_PANEL_DIMENSION;
-import static com.chess.gui.Table.boardDirection;
-
+/**
+ * Creates tiles on GUI
+ */
 
 public class BoardPanel extends JPanel {
+
+    protected final Table table;
     final List<TilePanel> boardTiles;
-    BoardPanel(){
-        super(new GridLayout(8,8));
-        this.boardTiles =new ArrayList<>();
+
+
+    /**
+     * Constructor for BoardPanel
+     */
+    BoardPanel(Table table) {
+        super(new GridLayout(8, 8));
+        this.table = table;
+        this.boardTiles = new ArrayList<TilePanel>();
         for (int i = 0; i < BoardUtils.NUM_TILES; i++) {
-            final TilePanel tilePanel=new TilePanel(this,i);
+            final TilePanel tilePanel = new TilePanel(this,i);
             this.boardTiles.add(tilePanel);
             add(tilePanel);
         }
-        setPreferredSize(BOARD_PANEL_DIMENSION);
+        setPreferredSize(Table.BOARD_PANEL_DIMENSION);
         validate();
     }
-    public void drawBoard(final Board board){
+
+    /**
+     * Method that visualises the chess board. First removes old board and then creates new one.
+     *
+     * @param board
+     */
+
+    public void drawBoard(final Board board) {
         removeAll();
-        for (final TilePanel tilePanel: boardDirection.traverse(boardTiles)) {
+        for (final TilePanel tilePanel : table.boardDirection.traverse(boardTiles)) {
             tilePanel.drawTile(board);
             add(tilePanel);
         }
         validate();
         repaint();
     }
+
+
 }

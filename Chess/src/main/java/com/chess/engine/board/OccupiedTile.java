@@ -2,15 +2,31 @@ package com.chess.engine.board;
 
 import com.chess.engine.pieces.Piece;
 
-//defines occupied tiles
+/**
+ * Occupied Tile Class
+ */
+
 public final class OccupiedTile extends Tile {
-    //declares that there is a piece on an occupied tile
+
     private final Piece pieceOnTile;
 
-    OccupiedTile(int tileCoordinate, Piece pieceOnTile) {
+    /**
+     * Occupied Tile constructor
+     *
+     * @param tileCoordinate
+     * @param pieceOnTile
+     */
+
+    OccupiedTile(int tileCoordinate, final Piece pieceOnTile) {
         super(tileCoordinate);
         this.pieceOnTile = pieceOnTile;
     }
+
+    /**
+     * toString method that returns lowercase if Alliance is black
+     *
+     * @return
+     */
 
     @Override
     public String toString() {
@@ -18,17 +34,13 @@ public final class OccupiedTile extends Tile {
                 getPiece().toString();
     }
 
-    //declare the tile has a piece
     @Override
     public boolean isTileOccupied() {
         return true;
     }
 
-    //declare the tile has a piece
     @Override
     public Piece getPiece() {
         return this.pieceOnTile;
     }
-
-
 }
