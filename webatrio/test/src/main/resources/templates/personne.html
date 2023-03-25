@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Nouvelle Personne</title>
+</head>
+<body>
+<h1> Nouvelle personne</h1>
+<form th:action="@{/personne}" th:object="${personne}">
+    <div>
+        <label >Nom : </label>
+        <input type="text" th:field="*{nom}">
+    </div>
+    <div>
+        <label >Prenom : </label>
+        <input type="text" th:field="*{prenom}">
+    </div>
+    <div>
+        <label >Date de naissance : </label>
+        <input type="date" th:field="*{dateNaissance}">
+    </div>
+    <div>
+        <button type="submit">Valider</button>
+    </div>
+    <div th:if="${error}" style="color: red">
+        <p th:text="${error}"></p>
+    </div>
+
+
+
+</form>
+</body>
+</html>
