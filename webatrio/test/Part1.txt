@@ -1,0 +1,15 @@
+Path pour retourner tous les éléments book :
+
+//book
+
+XPath pour retourner tous les éléments title ayant comme parent un élément book avec un attribut type égal à roman :
+
+//book[@type='roman']/title
+
+XPath pour retourner le nombre d'éléments book ayant un attribut type égal à bd :
+
+count(//book[@type='bd'])
+
+Que renvoie la requête XPath suivante :  /library/library/ancestor-or-self::library
+
+Elle renvoie tout les elements library 
